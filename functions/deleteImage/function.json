@@ -1,0 +1,14 @@
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "process",
+      "subscriptionName": "delete",
+      "connection": "ServiceBusConnection",
+      "accessRights": "Manage"
+    }
+  ],
+  "disabled": false
+}
