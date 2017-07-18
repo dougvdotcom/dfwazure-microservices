@@ -88,7 +88,7 @@ namespace WebUI.Controllers
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("PhotoName", SqlDbType.NVarChar, 255)).Value = fileName;
-                    cmd.Parameters.Add(new SqlParameter("Username", SqlDbType.NVarChar, 50)).Value = "Doug";
+                    cmd.Parameters.Add(new SqlParameter("Username", SqlDbType.NVarChar, 50)).Value = HttpContext.User.Identity.Name;
                     cmd.Parameters.Add(new SqlParameter("UploadTime", SqlDbType.DateTime)).Value =
                         DateTime.UtcNow;
                     cmd.Parameters.Add(new SqlParameter("Caption", SqlDbType.NVarChar, 1000)).Value =
