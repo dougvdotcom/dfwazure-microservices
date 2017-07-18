@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "name": "myQueueItem",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "resize",
+      "connection": "ServiceBusConnection",
+      "accessRights": "Manage"
+    }
+  ],
+  "disabled": false
+}
