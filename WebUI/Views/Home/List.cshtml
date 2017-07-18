@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebUI.Models.UploadedPhotoViewModel>
+@{
+    ViewBag.Title = ViewBag.Status + " Photos";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>@ViewBag.Status Images</h2>
+        <p>Here are all the @ViewBag.Status images in the database.</p>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <h4>@item.PhotoName</h4>
+            <a href="@item.FullPhotoUrl"><img src="@item.ThumbnailUrl" alt="@item.PhotoName"/></a>
+            <p>@item.Caption</p>
+            <p><i>Uploaded at @item.UploadTime.ToString("f") by @item.Username.</i></p>
+            @if (!item.IsApproved)
+            {
+                @Html.ActionLink("Approve", "Process", new { id = item.PhotoName, todo = 0, view = ViewBag.Status }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Process", new { id = item.PhotoName, todo = 1, view = ViewBag.Status }, new { @class = "btn btn-danger" })
+            }
+        </div>
+    }
+</div>
+
