@@ -1,0 +1,1858 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "service_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "profiles_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "virtualMachines_ftpserver_name": {
+            "defaultValue": "ftpserver",
+            "type": "String"
+        },
+        "alertrules_Failure_Anomalies___dfwazure_name": {
+            "defaultValue": "Failure Anomalies - dfwazure",
+            "type": "String"
+        },
+        "components_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "workflows_dfwazure_logic_name": {
+            "defaultValue": "dfwazure-logic",
+            "type": "String"
+        },
+        "trafficManagerProfiles_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "namespaces_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "servers_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "storageAccounts_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "connections_azureblob_name": {
+            "defaultValue": "azureblob",
+            "type": "String"
+        },
+        "connections_servicebus_name": {
+            "defaultValue": "servicebus",
+            "type": "String"
+        },
+        "connections_sql_name": {
+            "defaultValue": "sql",
+            "type": "String"
+        },
+        "connections_twitter_name": {
+            "defaultValue": "twitter",
+            "type": "String"
+        },
+        "serverfarms_dfwazureplan_name": {
+            "defaultValue": "dfwazureplan",
+            "type": "String"
+        },
+        "serverfarms_SouthCentralUSPlan_name": {
+            "defaultValue": "SouthCentralUSPlan",
+            "type": "String"
+        },
+        "serverfarms_dfwazure2appplan_name": {
+            "defaultValue": "dfwazure2appplan",
+            "type": "String"
+        },
+        "sites_dfwazure2_name": {
+            "defaultValue": "dfwazure2",
+            "type": "String"
+        },
+        "sites_dfwazfunction_name": {
+            "defaultValue": "dfwazfunction",
+            "type": "String"
+        },
+        "sites_DFWAzureGalleryAPI_name": {
+            "defaultValue": "DFWAzureGalleryAPI",
+            "type": "String"
+        },
+        "sites_dfwazure_name": {
+            "defaultValue": "dfwazure",
+            "type": "String"
+        },
+        "endpoints_dfwazure_name": {
+            "defaultValue": "dfwazure/dfwazure",
+            "type": "String"
+        },
+        "origins_dfwazure_blob_core_windows_net_name": {
+            "defaultValue": "dfwazure/dfwazure/dfwazure-blob-core-windows-net",
+            "type": "String"
+        },
+        "AuthorizationRules_RootManageSharedAccessKey_name": {
+            "defaultValue": "dfwazure/RootManageSharedAccessKey",
+            "type": "String"
+        },
+        "queues_resize_name": {
+            "defaultValue": "dfwazure/resize",
+            "type": "String"
+        },
+        "topics_process_name": {
+            "defaultValue": "dfwazure/process",
+            "type": "String"
+        },
+        "subscriptions_delete_name": {
+            "defaultValue": "dfwazure/process/delete",
+            "type": "String"
+        },
+        "subscriptions_save_name": {
+            "defaultValue": "dfwazure/process/save",
+            "type": "String"
+        },
+        "databases_master_name": {
+            "defaultValue": "dfwazure/master",
+            "type": "String"
+        },
+        "databases_sharedphoto_name": {
+            "defaultValue": "dfwazure/sharedphoto",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "defaultValue": "dfwazure/AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2017_07_17_08:24:04_name": {
+            "defaultValue": "dfwazure/ClientIPAddress_2017-07-17_08:24:04",
+            "type": "String"
+        },
+        "config_web_name": {
+            "defaultValue": "dfwazure2/web",
+            "type": "String"
+        },
+        "hostNameBindings_dfwazure2.azurewebsites.net_name": {
+            "defaultValue": "dfwazure2/dfwazure2.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_dfwazure.trafficmanager.net_name": {
+            "defaultValue": "dfwazure2/dfwazure.trafficmanager.net",
+            "type": "String"
+        },
+        "config_web_name_1": {
+            "defaultValue": "dfwazfunction/web",
+            "type": "String"
+        },
+        "deployments_1d0db880633d1af31fd69b6eacdef98e1d48fdea_name": {
+            "defaultValue": "dfwazfunction/1d0db880633d1af31fd69b6eacdef98e1d48fdea",
+            "type": "String"
+        },
+        "hostNameBindings_dfwazfunction.azurewebsites.net_name": {
+            "defaultValue": "dfwazfunction/dfwazfunction.azurewebsites.net",
+            "type": "String"
+        },
+        "config_web_name_2": {
+            "defaultValue": "DFWAzureGalleryAPI/web",
+            "type": "String"
+        },
+        "hostNameBindings_dfwazuregalleryapi.azurewebsites.net_name": {
+            "defaultValue": "DFWAzureGalleryAPI/dfwazuregalleryapi.azurewebsites.net",
+            "type": "String"
+        },
+        "config_web_name_3": {
+            "defaultValue": "dfwazure/web",
+            "type": "String"
+        },
+        "hostNameBindings_dfwazure.azurewebsites.net_name": {
+            "defaultValue": "dfwazure/dfwazure.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_dfwazure.trafficmanager.net_name_1": {
+            "defaultValue": "dfwazure/dfwazure.trafficmanager.net",
+            "type": "String"
+        },
+        "virtualMachines_ftpserver_id": {
+            "defaultValue": "/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Network/networkInterfaces/ftpserver886",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.ApiManagement/service/dfwazure'.",
+            "type": "Microsoft.ApiManagement/service",
+            "sku": {
+                "name": "Developer",
+                "capacity": 1
+            },
+            "name": "[parameters('service_dfwazure_name')]",
+            "apiVersion": "2016-07-07",
+            "location": "South Central US",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "publisherEmail": "Doug@linuxacademy.com",
+                "publisherName": "DFW Azure User Group",
+                "provisioningState": "Succeeded",
+                "targetProvisioningState": "",
+                "createdAtUtc": "2017-07-18T17:25:59.2588471Z",
+                "runtimeUrl": "[concat('https://', parameters('service_dfwazure_name'),'.azure-api.net')]",
+                "portalUrl": "[concat('https://', parameters('service_dfwazure_name'),'.portal.azure-api.net')]",
+                "managementApiUrl": "[concat('https://', parameters('service_dfwazure_name'),'.management.azure-api.net')]",
+                "scmUrl": "[concat('https://', parameters('service_dfwazure_name'),'.scm.azure-api.net')]",
+                "addresserEmail": "apimgmt-noreply@mail.windowsazure.com",
+                "hostnameConfigurations": [],
+                "staticIPs": [
+                    "13.65.93.25"
+                ],
+                "additionalLocations": null,
+                "vpnconfiguration": null,
+                "customProperties": null,
+                "vpnType": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Cdn/profiles/dfwazure'.",
+            "type": "Microsoft.Cdn/profiles",
+            "sku": {
+                "name": "Standard_Verizon"
+            },
+            "name": "[parameters('profiles_dfwazure_name')]",
+            "apiVersion": "2016-04-02",
+            "location": "SouthCentralUs",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceState": "Active"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Compute/virtualMachines/ftpserver'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_ftpserver_name')]",
+            "apiVersion": "2016-04-30-preview",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2012-R2-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[parameters('virtualMachines_ftpserver_name')]",
+                        "createOption": "FromImage",
+                        "vhd": {
+                            "uri": "[concat('https', '://', parameters('storageAccounts_dfwazure_name'), '.blob.core.windows.net', concat('/vhds/', parameters('virtualMachines_ftpserver_name'),'20170716140711.vhd'))]"
+                        },
+                        "caching": "ReadWrite"
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_ftpserver_name')]",
+                    "adminUsername": "pinehead",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('virtualMachines_ftpserver_id')]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/microsoft.insights/alertrules/Failure Anomalies - dfwazure'.",
+            "type": "microsoft.insights/alertrules",
+            "name": "[parameters('alertrules_Failure_Anomalies___dfwazure_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-link:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/microsoft.insights/components/dfwazure": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "name": "[parameters('alertrules_Failure_Anomalies___dfwazure_name')]",
+                "description": "",
+                "isEnabled": true,
+                "condition": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
+                    "dataSource": {
+                        "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
+                        "resourceUri": "[resourceId('microsoft.insights/components', parameters('components_dfwazure_name'))]",
+                        "metricNamespace": null,
+                        "metricName": "advanced::A3108E3D-5E26-44CF-B232-783F5E20EF10::ewAiAEgAeQBwAGUAcgBpAG8AbgBBAHAAcABsAGkAYwBhAHQAaQBvAG4AUwBpAGQAIgA6AG4AdQBsAGwALAAiAEgAeQBwAGUAcgBpAG8AbgBTAHUAYgBqAGUAYwB0AFMAaQBkACIAOgBuAHUAbABsACwAIgBIAHkAcABlAHIAaQBvAG4ATwBiAHMAZQByAHYAZQByAFMAaQBkACIAOgBuAHUAbABsACwAIgBDAHUAcwB0AG8AbQBlAHIAQQBjAGMAbwB1AG4AdABJAGQAIgA6ACIAMAAwADAAMAAwADAAMAAwAC0AMAAwADAAMAAtADAAMAAwADAALQAwADAAMAAwAC0AMAAwADAAMAAwADAAMAAwADAAMAAwADAAIgAsACIAQQBwAHAAbABpAGMAYQB0AGkAbwBuAE4AYQBtAGUAIgA6AG4AdQBsAGwALAAiAEEAcABwAGwAaQBjAGEAdABpAG8AbgBJAGQAIgA6AG4AdQBsAGwALAAiAFAAcgBvAGYAaQBsAGUASQBkACIAOgAwACwAIgBXAGkAbgBkAG8AdwBTAGkAegBlAEkAbgBNAGkAbgB1AHQAZQBzACIAOgA2ADAALAAiAE0AZQB0AHIAaQBjAE4AYQBtAGUAIgA6ACIAIgAsACIAVABoAHIAZQBzAGgAbwBsAGQAIgA6ADIALgAwACwAIgBBAGwAZQByAHQAVABlAG0AcABsAGEAdABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAE4AYQBtAGUAIgA6ACIAIgAsACIAUgB1AGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AIgA6ACIAIgAsACIAUgBlAHMAbwB1AHIAYwBlAEkAZAAiADoAbgB1AGwAbAAsACIAUwB1AGIAcwBjAHIAaQBwAHQAaQBvAG4ASQBkACIAOgBuAHUAbABsACwAIgBBAGcAZwByAGUAZwBhAHQAZQBGAHUAbgBjAHQAaQBvAG4AIgA6ACIAIgAsACIAQwBvAG0AcABhAHIAaQBzAG8AbgBPAHAAZQByAGEAdABvAHIAIgA6ACIAewBcACIAQgBhAHMAZQBsAGkAbgBlAFQAaQBtAGUAcwBwAGEAbgBcACIAOgBcACIAMAAwADoANAAwADoAMAAwAFwAIgAsAFwAIgBJAG4AcwBpAGcAaAB0AHMAUwBlAHIAdgBpAGMAZQBMAGEAZwBcACIAOgBcACIAMAAwADoAMAAwADoAMAAwAFwAIgAsAFwAIgBCAHUAZgBmAGUAcgBUAGkAbQBlAFwAIgA6AFwAIgAwADAAOgAwADEAOgAwADAAXAAiACwAXAAiAEIAbABvAGIAUwB0AG8AcgBhAGcAZQBMAG8AZwBnAGkAbgBnAEUAbgBhAGIAbABlAGQAXAAiADoAZgBhAGwAcwBlACwAXAAiAFUAcwBlAHIAUwB1AHAAcAByAGUAcwBzAGkAbwBuAHMAXAAiADoAbgB1AGwAbAAsAFwAIgBQAHIAbwBmAGkAbABlAEkAZABcACIAOgAwACwAXAAiAEUAbQBhAGkAbABUAHkAcABlAFwAIgA6ADAALABcACIAUgBkAGQARgBhAGkAbAB1AHIAZQBzAFMAcABpAGsAZQBUAGgAcgBlAHMAaABvAGwAZABcACIAOgAzAC4AMAAsAFwAIgBSAGEAdwBQAHIAbwBhAGMAdABpAHYAZQBSAHUAbABlAEMAbwBuAGYAaQBnAFwAIgA6AG4AdQBsAGwAfQAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8AQwB1AHMAdABvAG0AIgA6AGYAYQBsAHMAZQAsACIAQwB1AHMAdABvAG0ARQBtAGEAaQBsAHMARQBuAGMAbwBkAGUAZAAiADoAIgAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8ATwB3AG4AZQByAHMAIgA6AGYAYQBsAHMAZQB9AA=="
+                    },
+                    "operator": "GreaterThan",
+                    "threshold": 2,
+                    "windowSize": "PT1H"
+                },
+                "action": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
+                    "sendToServiceOwners": true,
+                    "customEmails": []
+                }
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.insights/components', parameters('components_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/microsoft.insights/components/dfwazure'.",
+            "type": "microsoft.insights/components",
+            "kind": "web",
+            "name": "[parameters('components_dfwazure_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "southcentralus",
+            "tags": {
+                "hidden-link:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure": "Resource",
+                "hidden-link:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/DFWAzureGalleryAPI": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "ApplicationId": "[parameters('components_dfwazure_name')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Logic/workflows/dfwazure-logic'.",
+            "type": "Microsoft.Logic/workflows",
+            "name": "[parameters('workflows_dfwazure_logic_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "When_a_new_tweet_is_posted": {
+                            "recurrence": {
+                                "frequency": "Minute",
+                                "interval": 3
+                            },
+                            "splitOn": "@triggerBody()?['value']",
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['twitter']['connectionId']"
+                                    }
+                                },
+                                "method": "get",
+                                "path": "/onnewtweet",
+                                "queries": {
+                                    "searchQuery": "#dfwazurepic"
+                                }
+                            }
+                        }
+                    },
+                    "actions": {
+                        "For_each": {
+                            "foreach": "@triggerBody()?['MediaUrls']",
+                            "actions": {
+                                "Condition": {
+                                    "actions": {
+                                        "Create_blob": {
+                                            "runAfter": {},
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "body": "@body('HTTP')",
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "post",
+                                                "path": "/datasets/default/files",
+                                                "queries": {
+                                                    "folderPath": "/upload",
+                                                    "name": "@{concat(guid(), '.jpg')}"
+                                                }
+                                            }
+                                        },
+                                        "Insert_row": {
+                                            "runAfter": {
+                                                "Create_blob": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "body": {
+                                                    "Caption": "@triggerBody()?['TweetText']",
+                                                    "IsApproved": "False",
+                                                    "PhotoName": "@body('Create_blob')?['Name']",
+                                                    "UploadTime": "@triggerBody()?['CreatedAtIso']",
+                                                    "Username": "@triggerBody()?['UserDetails']?['UserName']"
+                                                },
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['sql']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "post",
+                                                "path": "/datasets/default/tables/@{encodeURIComponent(encodeURIComponent('[dbo].[uploaded]'))}/items"
+                                            }
+                                        },
+                                        "Post_a_tweet": {
+                                            "runAfter": {
+                                                "Insert_row": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['twitter']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "post",
+                                                "path": "/posttweet",
+                                                "queries": {
+                                                    "tweetText": "@{concat('Thank you for your photo, ', triggerBody()?['UserDetails']?['UserName'])}"
+                                                }
+                                            }
+                                        },
+                                        "Send_message": {
+                                            "runAfter": {
+                                                "Post_a_tweet": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "body": {
+                                                    "Label": "@body('Create_blob')?['Name']"
+                                                },
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['servicebus']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "post",
+                                                "path": "/@{encodeURIComponent('resize')}/messages",
+                                                "queries": {
+                                                    "systemProperties": "None"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "runAfter": {
+                                        "HTTP": [
+                                            "Succeeded"
+                                        ]
+                                    },
+                                    "expression": "@endsWith(items('For_each'), '.jpg')",
+                                    "type": "If"
+                                },
+                                "HTTP": {
+                                    "runAfter": {},
+                                    "type": "Http",
+                                    "inputs": {
+                                        "method": "GET",
+                                        "uri": "@items('For_each')"
+                                    }
+                                }
+                            },
+                            "runAfter": {},
+                            "type": "Foreach"
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "azureblob": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_azureblob_name'))]",
+                                "connectionName": "azureblob",
+                                "id": "/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/azureblob"
+                            },
+                            "servicebus": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_servicebus_name'))]",
+                                "connectionName": "servicebus",
+                                "id": "/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/servicebus"
+                            },
+                            "sql": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_sql_name'))]",
+                                "connectionName": "sql",
+                                "id": "/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/sql"
+                            },
+                            "twitter": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_twitter_name'))]",
+                                "connectionName": "twitter",
+                                "id": "/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/twitter"
+                            }
+                        }
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/connections', parameters('connections_azureblob_name'))]",
+                "[resourceId('Microsoft.Web/connections', parameters('connections_servicebus_name'))]",
+                "[resourceId('Microsoft.Web/connections', parameters('connections_sql_name'))]",
+                "[resourceId('Microsoft.Web/connections', parameters('connections_twitter_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Network/trafficManagerProfiles/dfwazure'.",
+            "type": "Microsoft.Network/trafficManagerProfiles",
+            "name": "[parameters('trafficManagerProfiles_dfwazure_name')]",
+            "apiVersion": "2017-05-01",
+            "location": "global",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "profileStatus": "Enabled",
+                "trafficRoutingMethod": "Performance",
+                "dnsConfig": {
+                    "relativeName": "[parameters('trafficManagerProfiles_dfwazure_name')]",
+                    "fqdn": "[concat(parameters('trafficManagerProfiles_dfwazure_name'),'.trafficmanager.net')]",
+                    "ttl": 300
+                },
+                "monitorConfig": {
+                    "protocol": "HTTPS",
+                    "port": 443,
+                    "path": "/",
+                    "intervalInSeconds": 30,
+                    "toleratedNumberOfFailures": 3,
+                    "timeoutInSeconds": 10
+                },
+                "endpoints": [
+                    {
+                        "name": "[parameters('trafficManagerProfiles_dfwazure_name')]",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure_name'))]",
+                            "target": "[concat(parameters('trafficManagerProfiles_dfwazure_name'),'.azurewebsites.net')]",
+                            "weight": 1,
+                            "priority": 1,
+                            "endpointLocation": "South Central US"
+                        }
+                    },
+                    {
+                        "name": "[concat(parameters('trafficManagerProfiles_dfwazure_name'),'2')]",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure2_name'))]",
+                            "target": "[concat(parameters('trafficManagerProfiles_dfwazure_name'),'2.azurewebsites.net')]",
+                            "weight": 1,
+                            "priority": 2,
+                            "endpointLocation": "East US"
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure_name'))]",
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.ServiceBus/namespaces/dfwazure'.",
+            "type": "Microsoft.ServiceBus/namespaces",
+            "sku": {
+                "name": "Standard",
+                "tier": "Standard"
+            },
+            "kind": "Messaging",
+            "name": "[parameters('namespaces_dfwazure_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "South Central US",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "status": "Active",
+                "createdAt": "2017-07-16T19:04:13.39Z",
+                "serviceBusEndpoint": "[concat('https://', parameters('namespaces_dfwazure_name'),'.servicebus.windows.net:443/')]",
+                "enabled": true,
+                "updatedAt": "2017-07-16T19:04:37.85Z"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Sql/servers/dfwazure'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_dfwazure_name')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "administratorLogin": "pinehead",
+                "administratorLoginPassword": null,
+                "version": "12.0"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Storage/storageAccounts/dfwazure'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_RAGRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_dfwazure_name')]",
+            "apiVersion": "2016-01-01",
+            "location": "southcentralus",
+            "tags": {},
+            "scale": null,
+            "properties": {},
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/connections/azureblob'.",
+            "type": "Microsoft.Web/connections",
+            "name": "[parameters('connections_azureblob_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "displayName": "TwitterConnection",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/', parameters('connections_azureblob_name'))]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/connections/servicebus'.",
+            "type": "Microsoft.Web/connections",
+            "name": "[parameters('connections_servicebus_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "displayName": "[concat('DefaultServiceBus', parameters('connections_servicebus_name'))]",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/', parameters('connections_servicebus_name'))]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/connections/sql'.",
+            "type": "Microsoft.Web/connections",
+            "name": "[parameters('connections_sql_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "displayName": "[concat('DefaultSQLConnection')]",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/', parameters('connections_sql_name'))]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/connections/twitter'.",
+            "type": "Microsoft.Web/connections",
+            "name": "[parameters('connections_twitter_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "displayName": "dougvdotcom",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/providers/Microsoft.Web/locations/southcentralus/managedApis/', parameters('connections_twitter_name'))]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazureplan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "B1",
+                "tier": "Basic",
+                "size": "B1",
+                "family": "B",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_dfwazureplan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_dfwazureplan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/SouthCentralUSPlan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "Y1",
+                "tier": "Dynamic",
+                "size": "Y1",
+                "family": "Y",
+                "capacity": 0
+            },
+            "kind": "functionapp",
+            "name": "[parameters('serverfarms_SouthCentralUSPlan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_SouthCentralUSPlan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazure2appplan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "B1",
+                "tier": "Basic",
+                "size": "B1",
+                "family": "B",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_dfwazure2appplan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_dfwazure2appplan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure2'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_dfwazure2_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "East US",
+            "tags": {
+                "hidden-related:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazure2appplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_dfwazure2_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_dfwazure2_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_dfwazure2appplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_dfwazure2appplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazfunction'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp",
+            "name": "[parameters('sites_dfwazfunction_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_dfwazfunction_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_dfwazfunction_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_SouthCentralUSPlan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 1536,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_SouthCentralUSPlan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/DFWAzureGalleryAPI'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "api",
+            "name": "[parameters('sites_DFWAzureGalleryAPI_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazureplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_DFWAzureGalleryAPI_name'),'dfwazuregalleryapi.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_DFWAzureGalleryAPI_name'),'dfwazuregalleryapi.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_dfwazureplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_dfwazureplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_dfwazure_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazureplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_dfwazure_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_dfwazure_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_dfwazureplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_dfwazureplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Cdn/profiles/dfwazure/endpoints/dfwazure'.",
+            "type": "Microsoft.Cdn/profiles/endpoints",
+            "name": "[parameters('endpoints_dfwazure_name')]",
+            "apiVersion": "2016-04-02",
+            "location": "SouthCentralUs",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "originHostHeader": "dfwazure.blob.core.windows.net",
+                "isHttpAllowed": true,
+                "isHttpsAllowed": true,
+                "queryStringCachingBehavior": "IgnoreQueryString",
+                "originPath": null,
+                "origins": [
+                    {
+                        "name": "dfwazure-blob-core-windows-net",
+                        "properties": {
+                            "hostName": "dfwazure.blob.core.windows.net",
+                            "httpPort": null,
+                            "httpsPort": null
+                        }
+                    }
+                ],
+                "contentTypesToCompress": [
+                    "text/plain",
+                    "text/html",
+                    "text/css",
+                    "text/javascript",
+                    "application/x-javascript",
+                    "application/javascript",
+                    "application/json",
+                    "application/xml"
+                ],
+                "isCompressionEnabled": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Cdn/profiles/dfwazure/endpoints/dfwazure/origins/dfwazure-blob-core-windows-net'.",
+            "type": "Microsoft.Cdn/profiles/endpoints/origins",
+            "name": "[parameters('origins_dfwazure_blob_core_windows_net_name')]",
+            "apiVersion": "2016-04-02",
+            "scale": null,
+            "properties": {
+                "hostName": "dfwazure.blob.core.windows.net",
+                "httpPort": null,
+                "httpsPort": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_dfwazure_name'))]",
+                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('endpoints_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.ServiceBus/namespaces/dfwazure/AuthorizationRules/RootManageSharedAccessKey'.",
+            "type": "Microsoft.ServiceBus/namespaces/AuthorizationRules",
+            "name": "[parameters('AuthorizationRules_RootManageSharedAccessKey_name')]",
+            "apiVersion": "2015-08-01",
+            "scale": null,
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Manage",
+                    "Send"
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.ServiceBus/namespaces/dfwazure/queues/resize'.",
+            "type": "Microsoft.ServiceBus/namespaces/queues",
+            "name": "[parameters('queues_resize_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "maxSizeInMegabytes": 1024,
+                "requiresDuplicateDetection": false,
+                "requiresSession": false,
+                "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+                "deadLetteringOnMessageExpiration": false,
+                "enableBatchedOperations": true,
+                "isAnonymousAccessible": false,
+                "status": "Active",
+                "createdAt": "2017-07-17T19:15:47.487Z",
+                "updatedAt": "2017-07-17T19:15:50.893Z",
+                "accessedAt": "2017-07-19T00:25:47.4930754Z",
+                "supportOrdering": true,
+                "countDetails": {
+                    "activeMessageCount": 0,
+                    "deadLetterMessageCount": 6,
+                    "scheduledMessageCount": 0,
+                    "transferMessageCount": 0,
+                    "transferDeadLetterMessageCount": 0
+                },
+                "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+                "enablePartitioning": false,
+                "enableExpress": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.ServiceBus/namespaces/dfwazure/topics/process'.",
+            "type": "Microsoft.ServiceBus/namespaces/topics",
+            "name": "[parameters('topics_process_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+                "maxSizeInMegabytes": 1024,
+                "requiresDuplicateDetection": false,
+                "enableBatchedOperations": true,
+                "sizeInBytes": 0,
+                "filteringMessagesBeforePublishing": false,
+                "isAnonymousAccessible": false,
+                "status": "Active",
+                "createdAt": "2017-07-17T19:15:43.657Z",
+                "updatedAt": "2017-07-17T19:15:43.83Z",
+                "accessedAt": "2017-07-19T00:25:46.0035827Z",
+                "supportOrdering": true,
+                "countDetails": {
+                    "activeMessageCount": 0,
+                    "deadLetterMessageCount": 0,
+                    "scheduledMessageCount": 0,
+                    "transferMessageCount": 0,
+                    "transferDeadLetterMessageCount": 0
+                },
+                "subscriptionCount": 2,
+                "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+                "enablePartitioning": false,
+                "isExpress": false,
+                "enableSubscriptionPartitioning": false,
+                "enableExpress": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.ServiceBus/namespaces/dfwazure/topics/process/subscriptions/delete'.",
+            "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+            "name": "[parameters('subscriptions_delete_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "lockDuration": "00:01:00",
+                "requiresSession": false,
+                "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+                "deadLetteringOnMessageExpiration": false,
+                "deadLetteringOnFilterEvaluationExceptions": true,
+                "messageCount": 0,
+                "maxDeliveryCount": 10,
+                "enableBatchedOperations": true,
+                "status": "Active",
+                "createdAt": "2017-07-19T00:07:15.0616788Z",
+                "updatedAt": "2017-07-19T00:07:15.0616788Z",
+                "accessedAt": "2017-07-19T00:25:46.003Z",
+                "countDetails": {
+                    "activeMessageCount": 0,
+                    "deadLetterMessageCount": 0,
+                    "scheduledMessageCount": 0,
+                    "transferMessageCount": 0,
+                    "transferDeadLetterMessageCount": 0
+                },
+                "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+                "entityAvailabilityStatus": "Available"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dfwazure_name'))]",
+                "[resourceId('Microsoft.ServiceBus/namespaces/topics', parameters('topics_process_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.ServiceBus/namespaces/dfwazure/topics/process/subscriptions/save'.",
+            "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+            "name": "[parameters('subscriptions_save_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "lockDuration": "00:01:00",
+                "requiresSession": false,
+                "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+                "deadLetteringOnMessageExpiration": false,
+                "deadLetteringOnFilterEvaluationExceptions": true,
+                "messageCount": 0,
+                "maxDeliveryCount": 10,
+                "enableBatchedOperations": true,
+                "status": "Active",
+                "createdAt": "2017-07-19T00:07:14.3551077Z",
+                "updatedAt": "2017-07-19T00:07:14.3551077Z",
+                "accessedAt": "2017-07-19T00:25:46.003Z",
+                "countDetails": {
+                    "activeMessageCount": 0,
+                    "deadLetterMessageCount": 0,
+                    "scheduledMessageCount": 0,
+                    "transferMessageCount": 0,
+                    "transferDeadLetterMessageCount": 0
+                },
+                "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+                "entityAvailabilityStatus": "Available"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dfwazure_name'))]",
+                "[resourceId('Microsoft.ServiceBus/namespaces/topics', parameters('topics_process_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Sql/servers/dfwazure/databases/master'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,system",
+            "name": "[parameters('databases_master_name')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "4b8ba5f8-29f2-45a4-8349-9fc0251eb24c",
+                "edition": "Basic",
+                "status": "Online",
+                "serviceLevelObjective": "Basic",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2017-07-17T19:43:34.17Z",
+                "currentServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+                "requestedServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+                "requestedServiceObjectiveName": "Basic",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": null,
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Sql/servers/dfwazure/databases/sharedphoto'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[parameters('databases_sharedphoto_name')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "f6286d61-21e8-4ff2-bad8-bf66688a8fdd",
+                "edition": "Basic",
+                "status": "Online",
+                "serviceLevelObjective": "Basic",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2017-07-17T19:44:24.39Z",
+                "currentServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+                "requestedServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+                "requestedServiceObjectiveName": "Basic",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": "2017-07-17T19:55:08.813Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Sql/servers/dfwazure/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[parameters('firewallRules_AllowAllWindowsAzureIps_name')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Sql/servers/dfwazure/firewallRules/ClientIPAddress_2017-07-17_08:24:04'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[parameters('firewallRules_ClientIPAddress_2017_07_17_08:24:04_name')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "47.44.12.83",
+                "endIpAddress": "47.44.12.83"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure2/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[parameters('config_web_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "East US",
+            "tags": {
+                "hidden-related:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazure2appplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$dfwazure2",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure2/hostNameBindings/dfwazure2.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[parameters('hostNameBindings_dfwazure2.azurewebsites.net_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "siteName": "dfwazure2",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure2/hostNameBindings/dfwazure.trafficmanager.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[parameters('hostNameBindings_dfwazure.trafficmanager.net_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "siteName": "dfwazure2",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazfunction/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[parameters('config_web_name_1')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2012",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$dfwazfunction",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "ExternalGit",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": {
+                    "triggers": null,
+                    "actions": null
+                },
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "https://functions.azure.com",
+                        "https://functions-staging.azure.com",
+                        "https://functions-next.azure.com"
+                    ]
+                },
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazfunction_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazfunction/deployments/1d0db880633d1af31fd69b6eacdef98e1d48fdea'.",
+            "type": "Microsoft.Web/sites/deployments",
+            "name": "[parameters('deployments_1d0db880633d1af31fd69b6eacdef98e1d48fdea_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "id": "1d0db880633d1af31fd69b6eacdef98e1d48fdea",
+                "status": 4,
+                "author_email": "dougvanderweide@gmail.com",
+                "author": "Doug Vanderweide",
+                "deployer": "GitHub",
+                "message": "Delete project.lock.json",
+                "start_time": "2017-07-17T19:12:53.514919Z",
+                "end_time": "2017-07-17T19:12:59.2726681Z",
+                "active": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazfunction_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazfunction/hostNameBindings/dfwazfunction.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[parameters('hostNameBindings_dfwazfunction.azurewebsites.net_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "dfwazfunction",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazfunction_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/DFWAzureGalleryAPI/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[parameters('config_web_name_2')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazureplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2012",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$DFWAzureGalleryAPI",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": {
+                    "triggers": null,
+                    "actions": null
+                },
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "*"
+                    ]
+                },
+                "push": null,
+                "apiDefinition": {
+                    "url": "https://dfwazuregalleryapi.azurewebsites.net/swagger/docs/v1"
+                },
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_DFWAzureGalleryAPI_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/DFWAzureGalleryAPI/hostNameBindings/dfwazuregalleryapi.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[parameters('hostNameBindings_dfwazuregalleryapi.azurewebsites.net_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "DFWAzureGalleryAPI",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_DFWAzureGalleryAPI_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[parameters('config_web_name_3')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourcegroups/dfwazuredemo-dougv/providers/Microsoft.Web/serverfarms/dfwazureplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$dfwazure",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": {
+                    "triggers": null,
+                    "actions": null
+                },
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": true,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": "4e65f636-7319-487d-a54b-3aac9c0c3fe3",
+                    "clientSecret": null,
+                    "issuer": "https://sts.windows.net/e3cc4dc2-9a25-49d2-9119-1303e7741465/",
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure/hostNameBindings/dfwazure.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[parameters('hostNameBindings_dfwazure.azurewebsites.net_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "dfwazure",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d88d66e1-0977-4cc4-aee4-0d0eaeb6caca/resourceGroups/dfwazuredemo-dougv/providers/Microsoft.Web/sites/dfwazure/hostNameBindings/dfwazure.trafficmanager.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[parameters('hostNameBindings_dfwazure.trafficmanager.net_name_1')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "dfwazure",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dfwazure_name'))]"
+            ]
+        }
+    ]
+}

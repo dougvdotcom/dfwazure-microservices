@@ -1,0 +1,138 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "service_dfwazure_name": {
+            "value": null
+        },
+        "profiles_dfwazure_name": {
+            "value": null
+        },
+        "virtualMachines_ftpserver_name": {
+            "value": null
+        },
+        "alertrules_Failure_Anomalies___dfwazure_name": {
+            "value": null
+        },
+        "components_dfwazure_name": {
+            "value": null
+        },
+        "workflows_dfwazure_logic_name": {
+            "value": null
+        },
+        "trafficManagerProfiles_dfwazure_name": {
+            "value": null
+        },
+        "namespaces_dfwazure_name": {
+            "value": null
+        },
+        "servers_dfwazure_name": {
+            "value": null
+        },
+        "storageAccounts_dfwazure_name": {
+            "value": null
+        },
+        "connections_azureblob_name": {
+            "value": null
+        },
+        "connections_servicebus_name": {
+            "value": null
+        },
+        "connections_sql_name": {
+            "value": null
+        },
+        "connections_twitter_name": {
+            "value": null
+        },
+        "serverfarms_dfwazureplan_name": {
+            "value": null
+        },
+        "serverfarms_SouthCentralUSPlan_name": {
+            "value": null
+        },
+        "serverfarms_dfwazure2appplan_name": {
+            "value": null
+        },
+        "sites_dfwazure2_name": {
+            "value": null
+        },
+        "sites_dfwazfunction_name": {
+            "value": null
+        },
+        "sites_DFWAzureGalleryAPI_name": {
+            "value": null
+        },
+        "sites_dfwazure_name": {
+            "value": null
+        },
+        "endpoints_dfwazure_name": {
+            "value": null
+        },
+        "origins_dfwazure_blob_core_windows_net_name": {
+            "value": null
+        },
+        "AuthorizationRules_RootManageSharedAccessKey_name": {
+            "value": null
+        },
+        "queues_resize_name": {
+            "value": null
+        },
+        "topics_process_name": {
+            "value": null
+        },
+        "subscriptions_delete_name": {
+            "value": null
+        },
+        "subscriptions_save_name": {
+            "value": null
+        },
+        "databases_master_name": {
+            "value": null
+        },
+        "databases_sharedphoto_name": {
+            "value": null
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2017_07_17_08:24:04_name": {
+            "value": null
+        },
+        "config_web_name": {
+            "value": null
+        },
+        "hostNameBindings_dfwazure2.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_dfwazure.trafficmanager.net_name": {
+            "value": null
+        },
+        "config_web_name_1": {
+            "value": null
+        },
+        "deployments_1d0db880633d1af31fd69b6eacdef98e1d48fdea_name": {
+            "value": null
+        },
+        "hostNameBindings_dfwazfunction.azurewebsites.net_name": {
+            "value": null
+        },
+        "config_web_name_2": {
+            "value": null
+        },
+        "hostNameBindings_dfwazuregalleryapi.azurewebsites.net_name": {
+            "value": null
+        },
+        "config_web_name_3": {
+            "value": null
+        },
+        "hostNameBindings_dfwazure.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_dfwazure.trafficmanager.net_name_1": {
+            "value": null
+        },
+        "virtualMachines_ftpserver_id": {
+            "value": null
+        }
+    }
+}
